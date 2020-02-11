@@ -201,12 +201,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\athleticdebugdown.sql" />
-    <Content Include="App_Data\ClassProject.mdf" />
     <Content Include="App_Data\classprojectdown.sql" />
     <Content Include="App_Data\classprojectup.sql" />
-    <Content Include="App_Data\ClassProject_log.ldf">
-      <DependentUpon>ClassProject.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\script.sql" />
     <Content Include="App_Data\Test.sql" />
     <Content Include="Content\bootstrap-theme.css" />
