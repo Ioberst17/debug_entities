@@ -3,29 +3,36 @@
     ViewBag.Title = "Spells";
 }
 
-<h2>Spells</h2>
+<h2 style="color:white">Spells Search Engine</h2>
+
+<body style="background-image: url(https://storage.needpix.com/rsynced_images/wood-1700562_1280.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    ">
+</body>
 
 
 
-    @using (Html.BeginForm("Spells", "Creatures", FormMethod.Post))
-    {
-        <div class="form-group">
-            <div class="search">
-                @Html.TextBox("SpellName", null, new { @class = "form-control", type = "text" })
-                <button class="btn btn-primary" type="submit">Search</button>
-            </div>
+
+@using (Html.BeginForm("Spells", "Creatures", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="search">
+            @Html.TextBox("SpellName", null, new { @class = "form-control", type = "text" })
+            <button class="btn btn-primary" type="submit">Search</button>
         </div>
-    }
-    <div class="container">
-        @if (ViewBag.Success == true)
-        {
-            foreach (var item in ViewBag.SpellsList)
-            {
-                string spell = item.ToString();
-                <h4>@spell</h4>
-            }
-
-        }
     </div>
+}
+<div class="container">
+    @if (ViewBag.Success == true)
+    {
+        foreach (var item in ViewBag.SpellsList)
+        {
+            string spell = item.ToString();
+            <h4 style="color:white">@spell</h4>
+        }
+
+    }
+</div>
 
 

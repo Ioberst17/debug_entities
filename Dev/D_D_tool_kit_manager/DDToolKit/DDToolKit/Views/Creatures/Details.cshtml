@@ -1,98 +1,233 @@
-﻿@model DDToolKit.Models.Creature
+﻿@model DDToolKit.Model.Creature
 
-@{
-    ViewBag.Title = "Details";
-}
+<body style="background-image: url(https://storage.needpix.com/rsynced_images/dark-brown-background-1450781607k3z.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: silver;
+    ">
+</body>
 
-<h2>Details</h2>
+<!DOCTYPE html>
 
-<div>
-    <h4>Creature</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SubType)
-        </dt>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <div class="jumbotron">
+        <MonsterName>@Html.DisplayFor(model => model.Name)</MonsterName>
+        @if (Model.Subtype == null)
+        {
+            <p>@Html.DisplayFor(model => model.Size) @Html.DisplayFor(model => model.Type), @Html.DisplayFor(model => model.Alignment)</p>
+        }
+        else
+        {
+           <p>@Html.DisplayFor(model => model.Size) @Html.DisplayFor(model => model.Type) (@Html.DisplayFor(model => model.Subtype)), @Html.DisplayFor(model => model.Alignment)</p>
+        }
+    </div>
+</head>
 
-        <dd>
-            @Html.DisplayFor(model => model.SubType)
-        </dd>
+<div class="taper"></div>
+<body>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ArmorClass)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Languages)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ArmorClass)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Languages)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.HitPoints)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Proficiencies)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HitPoints) (@Html.DisplayFor(model => model.HitDice))
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Proficiencies)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Speed)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DamageResistance)
-        </dt>
+            <dd>
+                @ViewBag.Speed
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DamageResistance)
-        </dd>
+            <div class="taper"></div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DamageVulnerability)
-        </dt>
+            <div class="row">
+                <div class="MonsterColumn">
+                    <h4>@Html.DisplayNameFor(model => model.Strength)</h4>
+                    </MBR>
+                    <p>@Html.DisplayFor(model => model.Strength)</p>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DamageVulnerability)
-        </dd>
+                <div class="MonsterColumn">
+                    <h4>@Html.DisplayNameFor(model => model.Dexterity)</h4>
+                    </MBR>
+                    <p>@Html.DisplayFor(model => model.Dexterity)</p>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DamageImmunity)
-        </dt>
+                <div class="MonsterColumn">
+                    <h4>@Html.DisplayNameFor(model => model.Constitution)</h4>
+                    </MBR>
+                    <p>@Html.DisplayFor(model => model.Constitution)</p>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DamageImmunity)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ConditionImmunity)
-        </dt>
+                <div class="MonsterColumn">
+                    <h4>@Html.DisplayNameFor(model => model.Intelligence)</h4>
+                    </MBR>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConditionImmunity)
-        </dd>
+                    <p>@Html.DisplayFor(model => model.Intelligence)</p>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SpecialAbility)
-        </dt>
+                <div class="MonsterColumn">
+                    <h4>@Html.DisplayNameFor(model => model.Wisdom)</h4>
+                    </MBR>
+                    <p>@Html.DisplayFor(model => model.Wisdom)</p>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SpecialAbility)
-        </dd>
+                <div class="MonsterColumn">
+                    <h4>@Html.DisplayNameFor(model => model.Charisma)</h4>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Actions)
-        </dt>
+                    <p>@Html.DisplayFor(model => model.Charisma)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Actions)
-        </dd>
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LegendaryActions)
-        </dt>
+            <div class="taper"></div>
 
-        <dd>
-            @Html.DisplayFor(model => model.LegendaryActions)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Proficiencies)
+            </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            @foreach (var prof in ViewBag.prof)
+            {
+                <dd>@prof</dd>
+            }
+
+
+
+            @if (ViewBag.DamageVuln != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DamageVulnerabilities)
+                </dt>
+
+                <dd>
+                    @ViewBag.DamageVuln
+                </dd>
+            }
+
+            @if (ViewBag.DamageResist != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DamageResistances)
+                </dt>
+
+                <dd>
+                    @ViewBag.DamageResist
+                </dd>
+            }
+
+            @if (ViewBag.Immunity != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DamageImmunities)
+                </dt>
+
+                <dd>
+                    @ViewBag.Immunity
+                </dd>
+            }
+
+            @if (ViewBag.ConditionImmun != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.ConditionImmunities)
+                </dt>
+
+                <dd>
+                    @ViewBag.ConditionImmun
+                </dd>
+            }
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Senses)
+            </dt>
+
+            <dd>
+                @ViewBag.Senses
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Languages)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Languages)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ChallengeRating)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ChallengeRating)
+            </dd>
+
+
+            @if (ViewBag.Abilities != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.SpecialAbilities)
+                </dt>
+
+                <dd>
+                    @ViewBag.Abilities
+                </dd>
+            }
+
+            <div class="taper"></div>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Actions)
+            </dt>
+
+            @foreach (var action in ViewBag.action)
+            {
+                <dd>@action</dd>
+            }
+
+            @if (ViewBag.Legendary != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.LegendaryActions)
+                </dt>
+
+                foreach (var legendary in ViewBag.Legendary)
+                {
+                    <dd>@legendary</dd>
+                }
+            }
+
+
+            @if (ViewBag.Reaction != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Reactions)
+                </dt>
+                foreach (var reaction in ViewBag.Reaction)
+                {
+                    <dd>@reaction</dd>
+                }
+            }
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

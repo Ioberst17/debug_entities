@@ -38,3 +38,38 @@ textarea {
     width: inherit;
     height: inherit;
 }
+/*this starts here*/
+.jumbotron MonsterName {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: black;
+}
+
+.jumbotron p{
+    color: black;
+}
+
+.MonsterColumn{
+    float: left;
+    width: 16%;
+}
+
+.MBR{
+    display: block;
+    content: "";
+    margin-top: 0;
+}
+
+.taper {
+    border-top: solid 3px transparent;
+    border-left: solid 315px #a52a2a;
+    border-bottom: solid 3px #a52a2a;
+    border-right: solid 315px transparent;
+    margin: 5px 0px 5px 0px;
+}
+/*ends here*/

@@ -1,4 +1,4 @@
-namespace DDToolKit.Models
+namespace DDToolKit.Model
 {
     using System;
     using System.Collections.Generic;
@@ -6,117 +6,81 @@ namespace DDToolKit.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using DAL;
+
     public partial class Creature
     {
-        [Key]
-        [Column(Order = 0)]
         public int ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [StringLength(30)]
+        [StringLength(25)]
         public string Name { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [StringLength(15)]
+        [StringLength(10)]
         public string Size { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
         [StringLength(20)]
         public string Type { get; set; }
 
-        [StringLength(20)]
-        public string SubType { get; set; }
+        [StringLength(12)]
+        public string Subtype { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [StringLength(20)]
-        public string Aligment { get; set; }
+        [StringLength(40)]
+        public string Alignment { get; set; }
 
-        [Key]
-        [Column(Order = 5)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ArmorClass { get; set; }
+        public int? ArmorClass { get; set; }
 
-        [Key]
-        [Column(Order = 6)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int HitPoints { get; set; }
+        public int? HitPoints { get; set; }
 
-        [Key]
-        [Column(Order = 7)]
-        [StringLength(10)]
+        [StringLength(5)]
         public string HitDice { get; set; }
 
-        [Key]
-        [Column(Order = 8)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Strength { get; set; }
-
-        [Key]
-        [Column(Order = 9)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Dexterity { get; set; }
-
-        [Key]
-        [Column(Order = 10)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Constitution { get; set; }
-
-        [Key]
-        [Column(Order = 11)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Intelligence { get; set; }
-
-        [Key]
-        [Column(Order = 12)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Wisdom { get; set; }
-
-        [Key]
-        [Column(Order = 13)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Charisma { get; set; }
-
-        [StringLength(500)]
-        public string Languages { get; set; }
-
-        [Key]
-        [Column(Order = 14)]
-        public double ChallangeRating { get; set; }
-
-        [Key]
-        [Column(Order = 15)]
-        [StringLength(500)]
+        [StringLength(73)]
         public string Speed { get; set; }
 
-        [StringLength(500)]
+        public int? Strength { get; set; }
+
+        public int? Dexterity { get; set; }
+
+        public int? Constitution { get; set; }
+
+        public int? Intelligence { get; set; }
+
+        public int? Wisdom { get; set; }
+
+        public int? Charisma { get; set; }
+
+        [StringLength(794)]
         public string Proficiencies { get; set; }
 
-        [StringLength(500)]
-        public string DamageResistance { get; set; }
+        [StringLength(57)]
+        public string DamageVulnerabilities { get; set; }
 
-        [StringLength(500)]
-        public string DamageVulnerability { get; set; }
+        [StringLength(132)]
+        public string DamageResistances { get; set; }
 
-        [StringLength(500)]
-        public string DamageImmunity { get; set; }
+        [StringLength(115)]
+        public string DamageImmunities { get; set; }
 
-        [StringLength(500)]
-        public string ConditionImmunity { get; set; }
+        [StringLength(523)]
+        public string ConditionImmunities { get; set; }
 
-        [Key]
-        [Column(Order = 16)]
-        [StringLength(500)]
+        [StringLength(102)]
         public string Senses { get; set; }
 
-        [StringLength(500)]
-        public string SpecialAbility { get; set; }
+        [StringLength(91)]
+        public string Languages { get; set; }
 
+        [Column(TypeName = "numeric")]
+        public decimal? ChallengeRating { get; set; }
+
+        public string SpecialAbilities { get; set; }
+
+        [StringLength(3863)]
         public string Actions { get; set; }
 
+        [StringLength(1559)]
         public string LegendaryActions { get; set; }
+
+        [StringLength(468)]
+        public string Reactions { get; set; }
     }
 }

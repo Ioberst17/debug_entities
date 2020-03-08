@@ -26,7 +26,7 @@ namespace DDToolKit.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "";
+            ViewBag.Message = "Welcome";
 
             return View();
         }
