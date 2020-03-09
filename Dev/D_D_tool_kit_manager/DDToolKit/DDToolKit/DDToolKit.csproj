@@ -216,36 +216,37 @@
     <Content Include="App_Data\script.sql" />
     <Content Include="App_Data\seed.sql" />
     <Content Include="App_Data\up.sql" />
-<<<<<<< HEAD
-=======
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\contactform.css" />
->>>>>>> b81e93d9ffd7b83c4a28b6023d9fb8740a3b586b
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-<<<<<<< HEAD
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
     <None Include="Properties\PublishProfiles\Fixtest - Web Deploy.pubxml" />
-=======
     <Content Include="libman.json" />
     <Content Include="credentials.json" />
-    <None Include="Properties\PublishProfiles\ddtool - Web Deploy.pubxml" />
+    <!--<None Include="Properties\PublishProfiles\ddtool - Web Deploy.pubxml" />-->
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
->>>>>>> ba7693a4872ec0fad08c8ebde3c127c084f30392
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />

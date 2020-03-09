@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DDToolKit.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DDToolKit.Controllers
 {
@@ -50,12 +51,9 @@ namespace DDToolKit.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters")] Save save)
         {
-<<<<<<< HEAD
 
             save.OwnerID = User.Identity.GetUserId();
             save.Monsters = "Zombie";
-=======
->>>>>>> ba7693a4872ec0fad08c8ebde3c127c084f30392
             if (ModelState.IsValid)
             {
                 db.Saves.Add(save);
