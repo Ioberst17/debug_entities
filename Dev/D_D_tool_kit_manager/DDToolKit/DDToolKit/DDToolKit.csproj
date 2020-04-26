@@ -385,31 +385,21 @@
     <Content Include="Views\Home\ExternalLinks.cshtml" />
     <Content Include="Views\Home\Tutorial.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Saves\Create.cshtml" />
-    <Content Include="Views\Saves\Delete.cshtml" />
-    <Content Include="Views\Saves\Details.cshtml" />
-    <Content Include="Views\Saves\Edit.cshtml" />
-    <Content Include="Views\Saves\Index.cshtml" />
-    <Content Include="Views\Saves\Game.cshtml" />
-    <Content Include="Views\Saves\CreatePlayer.cshtml" />
-    <Content Include="Views\Saves\addMonsters.cshtml" />
-
     <Content Include="Views\Equipment\Index.cshtml" />
     <Content Include="Views\Equipment\equipInfo.cshtml" />
-    <Content Include="Views\Saves\MapEdit.cshtml" />
-    <Content Include="Views\Saves\MapSetup.cshtml" />
     <Content Include="Views\Maps\Create.cshtml" />
     <Content Include="Views\Maps\Delete.cshtml" />
     <Content Include="Views\Maps\Details.cshtml" />
     <Content Include="Views\Maps\Edit.cshtml" />
     <Content Include="Views\Maps\Index.cshtml" />
     <Content Include="Views\Maps\Manage.cshtml" />
+    <Content Include="Views\Saves\Create.cshtml" />
+    <Content Include="Views\Saves\Delete.cshtml" />
+    <Content Include="Views\Saves\Details.cshtml" />
+    <Content Include="Views\Saves\Edit.cshtml" />
+    <Content Include="Views\Saves\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-    <Folder Include="Views\Item\" />
-  </ItemGroup>
-
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

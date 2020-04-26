@@ -1,9 +1,28 @@
 ﻿create table [dbo].[Saves](
-	[ID]		INT IDENTITY(1,1)	NOT NULL,
-	[Name]		Nvarchar(40)		NOT NULL,
-	[OwnerID]	Nvarchar(128)		,
-	[Monsters]  NvarChar(500),
-	[Magic]    Nvarchar(500)
+	[ID]		 INT IDENTITY(1,1)	NOT NULL,
+	[Name]		 Nvarchar(40)		NOT NULL,
+	[OwnerID]	 Nvarchar(128)		,
+	[Monster1]   Nvarchar(128)		,
+	[Monster2]   Nvarchar(128)		,
+	[Monster3]   Nvarchar(128)		,
+	[Monster4]   Nvarchar(128)		,
+	[Monster5]   Nvarchar(128)		,
+	[Monster6]   Nvarchar(128)		,
+	[Monster7]   Nvarchar(128)		,
+	[Monster8]   Nvarchar(128)		,
+	[Monster9]	 Nvarchar(128)		,
+	[Monster10]  Nvarchar(128)		,
+	[Monster11]  Nvarchar(128)		,
+	[Monster12]  Nvarchar(128)		,
+	[Monster13]  Nvarchar(128)		,
+	[Monster14]  Nvarchar(128)		,
+	[Monster15]  Nvarchar(128)		,
+	[Monster16]  Nvarchar(128)		,
+	[Monster17]  Nvarchar(128)		,
+	[Monster18]  Nvarchar(128)		,
+	[Monster19]  Nvarchar(128)		,
+	[Monster20]  Nvarchar(128)		,
+	[Magic]      Nvarchar(500)
 
 	CONSTRAINT [PK_dbo.Saves] PRIMARY KEY CLUSTERED ([ID] ASC),
 	

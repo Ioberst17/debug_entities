@@ -1,79 +1,34 @@
 ﻿@model IEnumerable<DDToolKit.Models.Save>
+
 @{
     ViewBag.Title = "Index";
 }
-<h2>Index</h2>
-<p>
-    <button>@Html.ActionLink("Create New Save Game", "Create")</button>
-   
 
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
+        
+        <th></th>
     </tr>
-    @foreach (var item in Model)
-    {
 
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.ActionLink("Add a character to this save", "CreatePlayer", new { id = item.ID })
-    </td>
-    <td>
-        @Html.ActionLink("Create a map for this save", "MapSetup", new { id = item.ID })
-    </td>
-    <td>
-        @Html.ActionLink("Manage maps", "Manage", "Maps", new { id = item.ID },null)
-    </td>
-    @*<td>
-        @Html.ActionLink("Edit a map from this save", "MapEdit", new { id = item.ID })
-    </td>*@
-    @*<td>
-        @Html.ActionLink("Let's Play!", "Game", new { id = item.ID })
-    </td>*@
-    <td>
-        <button onclick="myEditFunction()"  class="button button">
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-        </button>
-        <style>    
-           
-            .button {
-              display: inline-block;
-              padding: 5px 10px;
-              font-size: 9px;
-              cursor: pointer;
-              text-align: center;
-              text-decoration: none;
-              outline: none;
-              border: none;
-              border-radius: 50%;
-              box-shadow: 0 5px #999;
-            }
-
-            .button:hover {background-color: #000000}
-
-            .button:active {
-              background-color: #ffffff;
-              box-shadow: 0 5px #666;
-              transform: translateY(4px);
-            }
-        </Style>
-    </td>
-</tr>
-
-    }
-</table>
-
-<style>
-
-</style>
-<script>
-function myEditFunction() {
-  alert("Do you want to edit this item?");
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
 }
-</script>
+
+</table>
