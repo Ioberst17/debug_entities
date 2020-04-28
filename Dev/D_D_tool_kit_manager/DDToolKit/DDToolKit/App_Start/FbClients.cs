@@ -9,6 +9,6 @@ namespace DDToolKit.App_Start
     {
         public const string appId = "489417875063406";
         public const string appSecret = "9b079646839da5b0855b4d4aaac86398";
-     
+
     }
 }

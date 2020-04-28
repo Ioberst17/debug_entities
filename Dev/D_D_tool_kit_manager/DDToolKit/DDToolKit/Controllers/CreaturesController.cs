@@ -1,15 +1,15 @@
-﻿using System;
+﻿using DDToolKit.DAL;
+using DDToolKit.Model;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using DDToolKit.DAL;
-using DDToolKit.Model;
-using Newtonsoft.Json.Linq;
-using System.IO;
 
 namespace DDToolKit.Controllers
 {
@@ -50,11 +50,12 @@ namespace DDToolKit.Controllers
             act = act.Replace(";", ",");
             act = act.Replace("'", "\"");
             char[] trim = act.ToCharArray();
-            for(int i= 0; i < trim.Length - 1; i++)
+            for (int i = 0; i < trim.Length - 1; i++)
             {
-                if(trim[i] == '\"')
+                if (trim[i] == '\"')
                 {
-                    if (char.IsLetter(trim[i - 1]) && char.IsLetter(trim[i + 1])){
+                    if (char.IsLetter(trim[i - 1]) && char.IsLetter(trim[i + 1]))
+                    {
                         trim[i] = '\'';
                     }
                 }
@@ -62,8 +63,8 @@ namespace DDToolKit.Controllers
             string test = new string(trim);
             JArray json = JArray.Parse(test);
             List<string> actions = new List<string>();
-            
-            foreach(var action in json)
+
+            foreach (var action in json)
             {
                 actions.Add(action["name"] + ": " + action["desc"]);
             }
@@ -133,7 +134,7 @@ namespace DDToolKit.Controllers
             List<string> prof = TrimProficiency(creature);
             List<string> action = TrimAction(creature.Actions);
             List<string> legendary = TrimAction(creature.LegendaryActions);
-            
+
 
 
             ViewBag.Abilites = TrimAbilities(creature);
@@ -164,7 +165,7 @@ namespace DDToolKit.Controllers
         public ActionResult Create([Bind(Include = "ID,Name,Size,Type,Subtype,Alignment,ArmorClass,HitPoints,HitDice,Speed,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Proficiencies,DamageVulnerabilities,DamageResistances,DamageImmunities,ConditionImmunities,Senses,Languages,ChallengeRating,SpecialAbilities,Actions,LegendaryActions,Reactions")] Creature creature)
         {
             if (ModelState.IsValid)
-            {   
+            {
                 db.Creatures.Add(creature);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -271,7 +272,7 @@ namespace DDToolKit.Controllers
             string json = SendRequest("https://www.dnd5eapi.co/api/spells");
             JObject data = JObject.Parse(json);
             string firstName = (string)data["results"][0]["name"];
-             firstName = IsString(firstName);
+            firstName = IsString(firstName);
             List<string> list = new List<string>();
 
             for (int i = 0; i < (int)data["count"]; i++)
@@ -298,7 +299,7 @@ namespace DDToolKit.Controllers
 
         public string IsString(string name)
         {
-            if(name == null)
+            if (name == null)
             {
                 return "Name is null";
             }

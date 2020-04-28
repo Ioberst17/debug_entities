@@ -1,8 +1,8 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DDToolKit.Models
 {
@@ -29,7 +29,7 @@ namespace DDToolKit.Models
 
 
 
-     //  : base("DDToolContext_Azure", throwIfV1Schema: false) 
+        //  : base("DDToolContext_Azure", throwIfV1Schema: false) 
 
         {
             // Disable code-first migrations

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using DDToolKit.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DDToolKit.Controllers;
 
 namespace DDToolKitUnitTest
 {
@@ -27,11 +26,11 @@ namespace DDToolKitUnitTest
         public void TestPlayerSizeFalse()
         {
             SavesController c = new SavesController();
-            
+
             string temp = null;
 
             string expected = "No Data";
-            
+
             string result = c.PlayerAttributeFiller(temp);
             Assert.AreEqual(expected, result);
         }

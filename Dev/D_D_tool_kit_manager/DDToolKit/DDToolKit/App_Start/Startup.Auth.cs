@@ -1,18 +1,18 @@
-﻿using System;
+﻿using DDToolKit.App_Start;
+using DDToolKit.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
-using Owin;
-using DDToolKit.Models;
 using Microsoft.Owin.Security.Twitter;
-using Microsoft.Owin.Security;
-using DDToolKit.App_Start;
+using Owin;
+using System;
 
 namespace DDToolKit
-{ 
-     
+{
+
     public partial class Startup
     {
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
@@ -38,7 +38,7 @@ namespace DDToolKit
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -53,10 +53,10 @@ namespace DDToolKit
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
             //    clientSecret: "");
-           
-           app.UseTwitterAuthentication(
-            consumerKey: TweetClient.consumerKey,
-            consumerSecret: TweetClient.consumerSecret);
+
+            app.UseTwitterAuthentication(
+             consumerKey: TweetClient.consumerKey,
+             consumerSecret: TweetClient.consumerSecret);
 
             app.UseFacebookAuthentication(
               appId: FbClients.appId,
@@ -65,11 +65,11 @@ namespace DDToolKit
 
 
 
-           app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-           ClientId = DDClients.ClientId,
-           ClientSecret = DDClients.ClientSecret
-           });
+                ClientId = DDClients.ClientId,
+                ClientSecret = DDClients.ClientSecret
+            });
         }
     }
 }

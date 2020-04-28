@@ -1,9 +1,9 @@
-﻿using System;
+﻿using CaptchaMvc.HtmlHelpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CaptchaMvc.HtmlHelpers;
 namespace DDToolKit.Controllers
 
 {

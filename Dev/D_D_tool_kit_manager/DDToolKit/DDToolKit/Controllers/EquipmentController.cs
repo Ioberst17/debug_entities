@@ -32,7 +32,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: Equipment
-       
+
         public ActionResult Index()
         {
             return View();
@@ -60,21 +60,21 @@ namespace DDToolKit.Controllers
             return View();
         }
 
-        
+
         public ActionResult equipInfo(string equipName)
         {
             string json = SendRequest("https://www.dnd5eapi.co/api/equipment/" + equipName);
 
             JObject data = JObject.Parse(json);
 
-            
-           
-            string name, equipCategory, vehicleCategory, gearCategoty, toolCategoty, unit, 
+
+
+            string name, equipCategory, vehicleCategory, gearCategoty, toolCategoty, unit,
                 weaponCategory, weaponRange, categoryRange, damageDice, damageTypeName, damageTypeUrl,
                  damage2hDamageDice, ArmorClassDexBonus, rangeLong, longThrowRange,
-               damage2hDamageType, armorCategory,ArmorClassMaxBonus, strMin, stealthDisadvantage, contents,
+               damage2hDamageType, armorCategory, ArmorClassMaxBonus, strMin, stealthDisadvantage, contents,
                 speedUnit, capacity;
-            
+
             int? damageBounc, weight, quantity, rangeNormal, damage2hDamageBounc, armorClassBase, normalThrowRange, speedQuantity;
             name = (string)data["name"];
 
@@ -87,7 +87,7 @@ namespace DDToolKit.Controllers
                 equipCategory = null;
             }
 
-            if(data["vehicle_category"] != null)
+            if (data["vehicle_category"] != null)
             {
                 vehicleCategory = (string)data["vehicle_category"];
             }
@@ -105,7 +105,7 @@ namespace DDToolKit.Controllers
                 gearCategoty = null;
             }
 
-            if(data["tool_category"] != null)
+            if (data["tool_category"] != null)
             {
                 toolCategoty = (string)data["tool_category"];
             }
@@ -114,7 +114,7 @@ namespace DDToolKit.Controllers
                 toolCategoty = null;
             }
 
-            if(data["cost"] != null)
+            if (data["cost"] != null)
             {
                 unit = (string)data["cost"]["unit"];
             }
@@ -142,21 +142,21 @@ namespace DDToolKit.Controllers
             }
 
             List<string> desc = new List<string>();
-            if (data["desc"] != null) 
+            if (data["desc"] != null)
             {
-                
+
                 for (int i = 0; i < data["desc"].Count(); i++)
                 {
                     desc.Add((string)data["desc"][i]);
-                   
+
 
                 }
             }
             else
             {
-                
+
                 desc = null;
-                
+
             }
 
             if (data["weapon_category"] != null)
@@ -186,7 +186,7 @@ namespace DDToolKit.Controllers
                 categoryRange = null;
             }
 
-            if (data["damage"]!= null)
+            if (data["damage"] != null)
             {
                 damageDice = (string)data["damage"]["damage_dice"];
             }
@@ -437,7 +437,7 @@ namespace DDToolKit.Controllers
             ViewBag.quantity = quantity;
             ViewBag.unit = unit;
             ViewBag.weight = weight;
-            
+
             ViewBag.weaponCategory = weaponCategory;
             ViewBag.weaponRange = weaponRange;
             ViewBag.categoryRange = categoryRange;

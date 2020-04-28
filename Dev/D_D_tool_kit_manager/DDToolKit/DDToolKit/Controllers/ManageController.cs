@@ -1,12 +1,12 @@
-﻿using System;
+﻿using DDToolKit.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using DDToolKit.Models;
 
 namespace DDToolKit.Controllers
 {
@@ -32,9 +32,9 @@ namespace DDToolKit.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -333,7 +333,7 @@ namespace DDToolKit.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -384,6 +384,6 @@ namespace DDToolKit.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

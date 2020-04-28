@@ -1,16 +1,16 @@
 namespace DDToolKit.DAL
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
     using Model;
+    using System;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
+    using System.Linq;
     public partial class Monsters : DbContext
     {
         public Monsters()
 
-            :base("name=Monsters")
-          //: base("name=DDToolContext_Azure")
+            : base("name=Monsters")
+        //: base("name=DDToolContext_Azure")
         {
         }
 
@@ -42,7 +42,7 @@ namespace DDToolKit.DAL
                 .WithRequired(e => e.AspNetUser)
                 .HasForeignKey(e => e.UserId);
 
-            
+
         }
     }
 }

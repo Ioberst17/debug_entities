@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DDToolKit.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,8 +8,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using DDToolKit.Models;
-using Microsoft.AspNet.Identity;
 
 namespace DDToolKit.Controllers
 {
@@ -19,11 +19,11 @@ namespace DDToolKit.Controllers
         public ActionResult Index()
         {
             string id = User.Identity.GetUserId();
-            
+
             return View(db.Maps.ToList().Where(s => s.OwnerID.Contains(id)));
         }
 
-        
+
         public ActionResult Manage(int? id)
         {
             if (id == null)
