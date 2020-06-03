@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
+    var size = "None";
+    ViewBag.sizefilter = "None";
 }
 
 
@@ -29,15 +31,19 @@
             </p>
 
         </div>
+
         <div class="col-lg-4">
             <input type="submit" value="Search" />
         </div>
     </div>
 
 }
+<button onclick="filterSize()">test</button>
+<p id="sizeholder" >None</p>
+<p>@ViewBag.sizefilter</p>
 
 <div class="row">
-   
+
     <div id="hideTable" class="col-lg-4">
 
         <table class="Silver">
@@ -52,7 +58,16 @@
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+                        @if (size != "None")
+                        {
+                            if (item.Size == size)
+                            {
+                                @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+                            }
+                        }
+                        else {
+                            @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+                        }
                     </td>
                 </tr>
             }
@@ -67,9 +82,34 @@
 
 
 @section scripts{
+    <script>
+        function filterSize() {
+            var temp = document.getElementById("sizeholder");
+            temp.innerHTML = "Medium";
+            @(ViewBag.sizefilter) = "Medium";
+        }
+        function checkNone() 
+        {
+            var temp = document.getElementById("sizeholder");
+            if (temp.innerHTML == "None") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function checkTiny() 
+        {
+            var temp = document.getElementById("sizeholder");
+            if (temp.innerHTML == "Tiny") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-   
+
     <script type="text/javascript" src="~/Scripts/autocompleteSmartMonster.js"></script>
 
 }

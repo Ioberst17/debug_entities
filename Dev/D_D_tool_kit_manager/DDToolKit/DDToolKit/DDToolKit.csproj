@@ -494,9 +494,7 @@
     <Content Include="Web_deploy.config" />
     <Content Include="Views\Home\Acknowledgement.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Item\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
